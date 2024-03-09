@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
+using onion_architecture.Infrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+//ConnectStrings
+builder.Services.AddDbContext<onion_architecture_Context>(option =>
+option.UseSqlServer(builder.Configuration.GetConnectionString("Base_Context")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

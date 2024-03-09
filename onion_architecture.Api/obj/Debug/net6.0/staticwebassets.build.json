@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EBO5BZSd2lruVyRxqo1q5Np8IfHTmK1aalDTsKgP93g=",
+  "Source": "onion_architecture.Api",
+  "BasePath": "_content/onion_architecture.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

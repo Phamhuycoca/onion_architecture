@@ -1,0 +1,14 @@
+F:\Base_Code\onion_architecture\onion_architecture.Domain\bin\Debug\net6.0\onion_architecture.Domain.deps.json
+F:\Base_Code\onion_architecture\onion_architecture.Domain\bin\Debug\net6.0\onion_architecture.Domain.runtimeconfig.json
+F:\Base_Code\onion_architecture\onion_architecture.Domain\bin\Debug\net6.0\onion_architecture.Domain.dll
+F:\Base_Code\onion_architecture\onion_architecture.Domain\bin\Debug\net6.0\onion_architecture.Domain.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.csproj.AssemblyReference.cache
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.AssemblyInfoInputs.cache
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.AssemblyInfo.cs
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.csproj.CoreCompileInputs.cache
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.dll
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\refint\onion_architecture.Domain.dll
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\onion_architecture.Domain.genruntimeconfig.cache
+F:\Base_Code\onion_architecture\onion_architecture.Domain\obj\Debug\net6.0\ref\onion_architecture.Domain.dll

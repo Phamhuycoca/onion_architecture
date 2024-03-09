@@ -1,0 +1,17 @@
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Infrastructure.deps.json
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Infrastructure.runtimeconfig.json
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Infrastructure.dll
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Infrastructure.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Domain.dll
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\bin\Debug\net6.0\onion_architecture.Domain.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.csproj.AssemblyReference.cache
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.AssemblyInfoInputs.cache
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.AssemblyInfo.cs
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.csproj.CoreCompileInputs.cache
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.csproj.CopyComplete
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.dll
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\refint\onion_architecture.Infrastructure.dll
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\onion_architecture.Infrastructure.genruntimeconfig.cache
+F:\Base_Code\onion_architecture\onion_architecture.Infrastructure\obj\Debug\net6.0\ref\onion_architecture.Infrastructure.dll
