@@ -15,78 +15,92 @@ namespace onion_architecture.Infrastructure.Repositories
         private readonly onion_architecture_Context _context;
         DbSet<T> _dbSet;
         DateTime now = DateTime.Now;
+
         public GenericRepository(onion_architecture_Context context)
         {
             _context = context;
-            _dbSet=_context.Set<T>();
+            _dbSet = _context.Set<T>();
         }
-        public async Task<bool> CreateAsync(T entity)
+
+        public bool Create(T entity)
         {
             if (!_dbSet.Any(e => e == entity))
             {
-                entity.createdAt = DateTime.Today.AddDays(1).AddHours(now.Hour).AddMinutes(now.Minute).AddSeconds(now.Second); ;
-                await _dbSet.AddAsync(entity);
-                await _context.SaveChangesAsync();
+                entity.createdAt = DateTime.Now;
+                _dbSet.Add(entity);
+                _context.SaveChanges();
                 return true;
             }
             return false;
         }
 
-        public async Task<bool> DeleteAsync(long id)
+        public bool Delete(long id)
         {
-            var entity = await _dbSet.FindAsync(id);
-            if (entity == null)
+            var entity = _dbSet.Find(id);
+
+            if (entity == null || entity.IsDelete!=false)
             {
                 return false;
             }
-            entity.deletedAt= DateTime.Today.AddDays(1).AddHours(now.Hour).AddMinutes(now.Minute).AddSeconds(now.Second);
-            //_dbSet.Remove(entity);
-            await _context.SaveChangesAsync();
-            return true;
-        }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            return await _dbSet.Where(x => x.deletedAt != null || x.deletedAt == DateTime.MinValue).ToListAsync();
-        }
+            entity.deletedAt = DateTime.Now;
+            entity.IsDelete = true;
+            _context.Entry(entity).State = EntityState.Modified;
 
-        public async Task<T> GetByIdAsync(long id)
-        {
-            var entity=await _dbSet.FindAsync(id);
-            return entity;
-        }
-
-        public IQueryable<T> Queryable()
-        {
-            return _context.Set<T>().AsQueryable();
-        }
-
-        public async Task<bool> UpdateAsync(T entity)
-        {
-            var entry =_context.Entry(entity);
-            if (entry.State == EntityState.Detached)
-            {
-                var existingEntity = _dbSet.Find(GetKeyValues(entity).ToArray());
-                if (existingEntity == null)
-                {
-                    return false;
-                }
-                _context.Entry(existingEntity).CurrentValues.SetValues(entity);
-            }
             try
             {
-                await _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
                 throw;
             }
-            return true;
 
+            return true;
         }
+
+        public List<T> GetAll()
+        {
+            return _dbSet.Where(x=>x.IsDelete==false).OrderByDescending(x => x.createdAt).ToList();
+        }
+
+        public T GetById(long id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public bool Update(T entity)
+        {
+            var entry = _context.Entry(entity);
+
+            if (entry.State == EntityState.Detached)
+            {
+                var existingEntity = _dbSet.Find(GetKeyValues(entity).ToArray());
+
+                if (existingEntity == null)
+                {
+                    return false;
+                }
+
+                _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+            }
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return true;
+        }
+
         private IEnumerable<object> GetKeyValues(T entity)
         {
             var keyProperties = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties;
+
             foreach (var property in keyProperties)
             {
                 yield return property.PropertyInfo.GetValue(entity);

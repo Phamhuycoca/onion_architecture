@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using onion_architecture.Application.Features.Dto.UserDto;
+using onion_architecture.Application.IService;
 
 namespace onion_architecture.Api.Controllers
 {
@@ -12,10 +14,12 @@ namespace onion_architecture.Api.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IUserService _service;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,IUserService service)
         {
             _logger = logger;
+            _service = service;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -28,6 +32,21 @@ namespace onion_architecture.Api.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        [HttpPost]
+        public IActionResult Create(CreateUser user)
+        {
+            return Ok(_service.Create(user));
+        }
+        [HttpGet("User")]
+        public IActionResult GetItem()
+        {
+            return Ok(_service.GetUsers());
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Create(long id)
+        {
+            return Ok(_service.Delete(id));
         }
     }
 }

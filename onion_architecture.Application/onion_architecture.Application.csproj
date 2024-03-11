@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.27">
       <PrivateAssets>all</PrivateAssets>
@@ -14,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\onion_architecture.Domain\onion_architecture.Domain.csproj" />
+    <ProjectReference Include="..\onion_architecture.Infrastructure\onion_architecture.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@ namespace onion_architecture.Domain.Base
         public DateTime updatedAt { get; set; }
         public long deletedBy { get; set; }
         public DateTime deletedAt { get; set; }
+        public bool IsDelete { get; set; }
 
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TeUXsmzmrlzh+4wxtIkxzXY6q0Xj8hPJJqCCEg/QQv9IB5IGJ4A3hpJIVcSDOferzbTVuCX5m0qoXEy+oDwkyw==",
+  "dgSpecHash": "OWfS1URy5O8sXmLAPWkkOu5ekCGUpakZxfi+YhYMe18yA1A+7/wMmdRg46XHPF9flL0RsFFE0dI/3wXop9s1Yw==",
   "success": true,
   "projectFilePath": "F:\\Base_Code\\onion_architecture\\onion_architecture.Api\\onion_architecture.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

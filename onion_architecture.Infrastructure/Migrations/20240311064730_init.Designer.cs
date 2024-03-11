@@ -12,8 +12,8 @@ using onion_architecture.Infrastructure.Context;
 namespace onion_architecture.Infrastructure.Migrations
 {
     [DbContext(typeof(onion_architecture_Context))]
-    [Migration("20240309182428_it")]
-    partial class it
+    [Migration("20240311064730_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,9 @@ namespace onion_architecture.Infrastructure.Migrations
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PassWord")
                         .HasColumnType("nvarchar(max)");

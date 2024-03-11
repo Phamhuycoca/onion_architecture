@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace onion_architecture.Infrastructure.Migrations
 {
-    public partial class it : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,8 @@ namespace onion_architecture.Infrastructure.Migrations
                     updatedBy = table.Column<long>(type: "bigint", nullable: false),
                     updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     deletedBy = table.Column<long>(type: "bigint", nullable: false),
-                    deletedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    deletedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -45,6 +45,9 @@ namespace onion_architecture.Infrastructure.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<string>("PassWord")
                         .HasColumnType("nvarchar(max)");
 

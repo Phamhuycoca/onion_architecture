@@ -9,12 +9,10 @@ namespace onion_architecture.Domain.Repositories
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(long id);
-        Task<bool> CreateAsync(T entity);
-        Task<bool> UpdateAsync(T entity);
-        Task<bool> DeleteAsync(long id);
-        IQueryable<T> Queryable();
-
+        List<T> GetAll();
+        bool Create(T entity);
+        bool Update(T entity);
+        bool Delete(long id);
+        T GetById(long id);
     }
 }

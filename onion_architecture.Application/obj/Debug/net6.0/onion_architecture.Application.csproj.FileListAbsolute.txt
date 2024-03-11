@@ -12,3 +12,8 @@ F:\Base_Code\onion_architecture\onion_architecture.Application\obj\Debug\net6.0\
 F:\Base_Code\onion_architecture\onion_architecture.Application\obj\Debug\net6.0\onion_architecture.Application.pdb
 F:\Base_Code\onion_architecture\onion_architecture.Application\obj\Debug\net6.0\onion_architecture.Application.genruntimeconfig.cache
 F:\Base_Code\onion_architecture\onion_architecture.Application\obj\Debug\net6.0\ref\onion_architecture.Application.dll
+F:\Base_Code\onion_architecture\onion_architecture.Application\bin\Debug\net6.0\onion_architecture.Domain.dll
+F:\Base_Code\onion_architecture\onion_architecture.Application\bin\Debug\net6.0\onion_architecture.Infrastructure.dll
+F:\Base_Code\onion_architecture\onion_architecture.Application\bin\Debug\net6.0\onion_architecture.Domain.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Application\bin\Debug\net6.0\onion_architecture.Infrastructure.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Application\obj\Debug\net6.0\onion_architecture.Application.csproj.CopyComplete
