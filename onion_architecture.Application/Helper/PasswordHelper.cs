@@ -18,7 +18,6 @@ namespace Application.Helpers
 
         public static bool VerifyPassword(string password, string hashedPassword)
         {
-            // Trích xuất salt từ hashedPassword
             var saltBytes = Base64Decode(hashedPassword.Split('$')[0]);
             var hashBytes = Base64Decode(hashedPassword.Split('$')[1]);
 
