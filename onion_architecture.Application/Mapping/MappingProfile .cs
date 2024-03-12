@@ -15,6 +15,7 @@ namespace onion_architecture.Application.Mapping
         {
             //User
             CreateMap<User, CreateUser>().ReverseMap();
+            CreateMap<User, UpdateUser>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
 
         }

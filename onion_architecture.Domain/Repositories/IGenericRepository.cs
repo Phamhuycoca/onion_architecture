@@ -10,9 +10,9 @@ namespace onion_architecture.Domain.Repositories
     public interface IGenericRepository<T> where T : BaseEntity
     {
         List<T> GetAll();
-        bool Create(T entity);
-        bool Update(T entity);
-        bool Delete(long id);
+        T Create(T entity);
+        T Update(T entity);
+        T Delete(long id);
         T GetById(long id);
     }
 }

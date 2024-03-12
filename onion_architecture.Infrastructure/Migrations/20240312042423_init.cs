@@ -23,6 +23,7 @@ namespace onion_architecture.Infrastructure.Migrations
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Avatar = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Is_Active = table.Column<bool>(type: "bit", nullable: true),
                     createdBy = table.Column<long>(type: "bigint", nullable: false),
                     createdAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updatedBy = table.Column<long>(type: "bigint", nullable: false),

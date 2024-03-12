@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using onion_architecture.Application.Features.Dto.UserDto;
+using onion_architecture.Application.Helper;
 using onion_architecture.Application.IService;
 
 namespace onion_architecture.Api.Controllers
@@ -39,9 +40,9 @@ namespace onion_architecture.Api.Controllers
             return Ok(_service.Create(user));
         }
         [HttpGet("User")]
-        public IActionResult GetItem()
+        public IActionResult GetItem(int page=1,int size=10,string? keyword="")
         {
-            return Ok(_service.GetUsers());
+            return Ok(_service.Items(page,size,keyword));
         }
         [HttpDelete("{id}")]
         public IActionResult Create(long id)

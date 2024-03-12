@@ -10,6 +10,7 @@ using onion_architecture.Infrastructure.Module;
 using onion_architecture.Application.Mapping;
 using onion_architecture.Application.IService;
 using onion_architecture.Application.Service;
+using FluentValidation;
 
 namespace onion_architecture.Application.Module
 {
@@ -17,6 +18,8 @@ namespace onion_architecture.Application.Module
     {
         public static IServiceCollection AddApplicationModules(this IServiceCollection services)
         {
+            var assm = Assembly.GetExecutingAssembly();
+            services.AddValidatorsFromAssembly(assm);
             services.AddInfrastructureModule();
             var mapperConfig = new MapperConfiguration(mc =>
             {

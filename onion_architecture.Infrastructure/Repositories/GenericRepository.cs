@@ -2,6 +2,7 @@
 using onion_architecture.Domain.Base;
 using onion_architecture.Domain.Repositories;
 using onion_architecture.Infrastructure.Context;
+using onion_architecture.Infrastructure.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,54 +23,82 @@ namespace onion_architecture.Infrastructure.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public bool Create(T entity)
+        public T Create(T entity)
         {
             if (!_dbSet.Any(e => e == entity))
             {
                 entity.createdAt = DateTime.Now;
                 _dbSet.Add(entity);
                 _context.SaveChanges();
-                return true;
+                return entity;
             }
-            return false;
+            return null;
         }
 
-        public bool Delete(long id)
+        public T Delete(long id)
         {
-            var entity = _dbSet.Find(id);
-
-            if (entity == null || entity.IsDelete!=false)
-            {
-                return false;
-            }
-
-            entity.deletedAt = DateTime.Now;
-            entity.IsDelete = true;
-            _context.Entry(entity).State = EntityState.Modified;
-
+           
             try
             {
+                var entity = _dbSet.Find(id);
+
+                if (entity == null || entity.IsDelete != false)
+                {
+                    throw new ApiException(400, "Không tìm thấy thông tin");
+                }
+
+                entity.deletedAt = DateTime.Now;
+                entity.IsDelete = true;
+                _context.Entry(entity).State = EntityState.Modified;
                 _context.SaveChanges();
+                return entity;
             }
             catch (DbUpdateConcurrencyException)
             {
                 throw;
             }
 
-            return true;
         }
 
         public List<T> GetAll()
         {
-            return _dbSet.Where(x=>x.IsDelete==false).OrderByDescending(x => x.createdAt).ToList();
+            return _dbSet.Where(x => x.IsDelete == false).OrderByDescending(x => x.createdAt).ToList();
         }
 
         public T GetById(long id)
         {
-            return _dbSet.Find(id);
+            var item = _dbSet.Find(id);
+            if (item == null || item.IsDelete)
+            {
+                throw new ApiException(404, "Không tìm thấy thông tin");
+            }
+            /*if (item.IsDelete)
+            {
+                throw new ApiException(404, "Không tìm thấy thông tin");
+            }*/
+            return item;
         }
 
-        public bool Update(T entity)
+        public T Update(T entity)
+        {
+            if (!_dbSet.Any(e => e == entity))
+            {
+                throw new ApiException(404, "Không tìm thấy thông tin");
+            }
+            entity.updatedAt = DateTime.Now;
+            _context.Entry(entity).State = EntityState.Modified;
+            try
+            {
+                _context.SaveChanges();
+                return entity;
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+        }
+       /* public T Update(T entity)
         {
             var entry = _context.Entry(entity);
 
@@ -79,7 +108,7 @@ namespace onion_architecture.Infrastructure.Repositories
 
                 if (existingEntity == null)
                 {
-                    return false;
+                    throw new ApiException(404, "Không tìm thấy thông tin");
                 }
 
                 _context.Entry(existingEntity).CurrentValues.SetValues(entity);
@@ -88,15 +117,13 @@ namespace onion_architecture.Infrastructure.Repositories
             try
             {
                 _context.SaveChanges();
+                return entity;
             }
             catch (DbUpdateConcurrencyException)
             {
                 throw;
             }
-
-            return true;
-        }
-
+        }*/
         private IEnumerable<object> GetKeyValues(T entity)
         {
             var keyProperties = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties;
@@ -106,5 +133,6 @@ namespace onion_architecture.Infrastructure.Repositories
                 yield return property.PropertyInfo.GetValue(entity);
             }
         }
+
     }
 }

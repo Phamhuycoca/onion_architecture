@@ -48,6 +48,9 @@ namespace onion_architecture.Infrastructure.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<bool?>("Is_Active")
+                        .HasColumnType("bit");
+
                     b.Property<string>("PassWord")
                         .HasColumnType("nvarchar(max)");
 

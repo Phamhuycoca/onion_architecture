@@ -73,3 +73,12 @@ F:\Base_Code\onion_architecture\onion_architecture.Api\obj\Debug\net6.0\ref\onio
 F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\AutoMapper.dll
 F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\onion_architecture.Application.dll
 F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\onion_architecture.Application.pdb
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\MediatR.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\FluentValidation.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+F:\Base_Code\onion_architecture\onion_architecture.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
